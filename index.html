@@ -210,6 +210,8 @@
             font-size: 1rem;
             line-height: 1.5;
         }
+
+        
         
     </style>
 </head>
@@ -281,27 +283,28 @@
         <h2 class="text-3xl font-bold mb-8 text-[#660708]">Nuestros Proyectos Inmobiliarios</h2>
         <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
             <!-- Proyecto 1 -->
-            <div class="border border-[#660708] rounded-lg overflow-hidden shadow-lg cursor-pointer transform transition duration-300 hover:scale-105" onclick="showModal('Proyecto Moderno', 'Este proyecto ofrece un diseño contemporáneo con acabados de alta gama en el corazón de la ciudad.', 'https://via.placeholder.com/600/ff7f7f')">
-                <img src="https://via.placeholder.com/600/ff7f7f" alt="Proyecto 1" class="w-full h-48 object-cover">
+            <div class="border border-[#660708] rounded-lg overflow-hidden shadow-lg cursor-pointer transform transition duration-300 hover:scale-105" onclick="showModal('Proyecto Moderno', 'Este proyecto ofrece un diseño contemporáneo con acabados de alta gama en el corazón de la ciudad.', '/proyecto1.png')">
+                <img src="/proyecto1.png" alt="Proyecto 1" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-xl font-semibold text-[#660708] mb-2">Proyecto Moderno</h3>
-                    <p class="text-[#660708]">Dirección Ficticia 1</p>
+                    <p class="text-[#660708]">calle azul 1045
+                    </p>
                 </div>
             </div>
             <!-- Proyecto 2 -->
-            <div class="border border-[#660708] rounded-lg overflow-hidden shadow-lg cursor-pointer transform transition duration-300 hover:scale-105" onclick="showModal('Residencial Horizonte', 'Un diseño exclusivo con vistas panorámicas al mar. Ideal para vivir cómodamente en la naturaleza.', 'https://via.placeholder.com/600/ffd700')">
-                <img src="https://via.placeholder.com/600/ffd700" alt="Proyecto 2" class="w-full h-48 object-cover">
+            <div class="border border-[#660708] rounded-lg overflow-hidden shadow-lg cursor-pointer transform transition duration-300 hover:scale-105" onclick="showModal('Residencial Horizonte', 'Un diseño exclusivo con vistas panorámicas al mar. Ideal para vivir cómodamente en la naturaleza.', '/proyecto2.png')">
+                <img src="/proyecto2.png" alt="Proyecto 2" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-xl font-semibold text-[#660708] mb-2">Residencial Horizonte</h3>
-                    <p class="text-[#660708]">Dirección Ficticia 2</p>
+                    <p class="text-[#660708]">entrerios 833</p>
                 </div>
             </div>
             <!-- Proyecto 3 -->
-            <div class="border border-[#660708] rounded-lg overflow-hidden shadow-lg cursor-pointer transform transition duration-300 hover:scale-105" onclick="showModal('Villa del Sol', 'Un complejo residencial con diseño mediterráneo, ideal para familias y con acceso a las mejores comodidades.', 'https://via.placeholder.com/600/32a852')">
-                <img src="https://via.placeholder.com/600/32a852" alt="Proyecto 3" class="w-full h-48 object-cover">
+            <div class="border border-[#660708] rounded-lg overflow-hidden shadow-lg cursor-pointer transform transition duration-300 hover:scale-105" onclick="showModal('Villa del Sol', 'Un complejo residencial con diseño mediterráneo, ideal para familias y con acceso a las mejores comodidades.', '/proyecto3.png')">
+                <img src="/proyecto3.png" alt="Proyecto 3" class="w-full h-48 object-cover">
                 <div class="p-4">
                     <h3 class="text-xl font-semibold text-[#660708] mb-2">Villa del Sol</h3>
-                    <p class="text-[#660708]">Dirección Ficticia 3</p>
+                    <p class="text-[#660708]">moreno 833</p>
                 </div>
             </div>
         </div>
@@ -349,7 +352,7 @@
     <div id="modal-content" class="bg-white p-6 rounded-lg w-11/12 sm:w-3/4 md:w-1/2 lg:w-1/3" onclick="event.stopPropagation()">
         <h3 id="modal-title" class="text-2xl font-bold text-[#660708] mb-4">Proyecto</h3>
         <p id="modal-description" class="text-[#660708] mb-4">Descripción del proyecto</p>
-        <img id="modal-image" src="https://via.placeholder.com/600" alt="Imagen del proyecto" class="w-full mb-4 rounded-lg">
+        <img id="modal-image" src="/proyecto1.png" alt="Imagen del proyecto" class="w-full mb-4 rounded-lg">
         <div class="text-center">
             <button onclick="closeModal()" class="bg-[#660708] text-white px-6 py-2 rounded-full hover:bg-red-600 transition">Cerrar</button>
         </div>
@@ -539,21 +542,20 @@ setInterval(nextSlide, 5000);
 
         // Modal functionality
         function showModal(title, description, imageUrl) {
-            document.getElementById('modal-title').textContent = title;
-            document.getElementById('modal-description').textContent = description;
+            // Actualiza los contenidos del modal
+            document.getElementById('modal-title').innerText = title;
+            document.getElementById('modal-description').innerText = description;
             document.getElementById('modal-image').src = imageUrl;
-
+        
+            // Muestra el modal
             document.getElementById('modal').style.display = 'flex';
         }
-
-        function closeModal() {
-            document
-            document.getElementById('modal').style.display = 'flex';
-        }
-
+        
+        // Función para cerrar el modal
         function closeModal() {
             document.getElementById('modal').style.display = 'none';
         }
+        
     </script>
 </body>
 </html>
